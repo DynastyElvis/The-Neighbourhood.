@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="search">
+    <div class="container">
+        <h2 class="text-center mb-5">Your search results</h2>
+        <div class="row biz">
+            {% for business in businesses %}
+               
+                {% empty %}
+                <div class="col-md-12">
+                    <div class="card mb-4 post-card">
+                        <div class="card-body text-center">
+                            <h6 class="fade-item mb-2 text-danger">No businesses found within your Neighborhood!!</h6>
+                        </div>
+                    </div>
+                {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
