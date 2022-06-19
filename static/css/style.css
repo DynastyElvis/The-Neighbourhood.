@@ -54,7 +54,7 @@ min-height: 100vh;
  }
  .landing{
   background-repeat: no-repeat; 
-  background-image: url("./williams.jpeg");
+  background-image: url("/static/images/hood.jpg");
   height: 80vh;
   width: 100%;
   background-size:cover ;
