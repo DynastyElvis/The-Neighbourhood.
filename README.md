@@ -1,10 +1,10 @@
-# The-Neighbourhood.
+# The-Neighbourhood
 Tis is a neighborhood app where a user must signup first, be able to join a hood owned by the hood admin, and once you join a hood, one can see businesses and posts in only that wood they belong to
 
 
 ## Author  
   
-LinkedIn - [KIPKEMOI ELVIS RONO](https://www.linkedin.com/in/elvis-rono-aa3548209/)
+LinkedIn - [KIPKEMOI ELVIS RONO](https://ke.linkedin.com/in/kipkemoi-elvis-aa3548209?trk=public_profile_samename-profile)
 
 
 GITHUB - [ELVIS](https://github.com/DynastyElvis)
@@ -110,4 +110,4 @@ No Known Bugs.
 Email Address - [Kipkemoilvs@gmail.com](Kipkemoilvs@gmail.com)
 
 
-[Go Back to the top](#The-Neighbourhood.)
+[Go Back to the top](#The-Neighbourhood)
