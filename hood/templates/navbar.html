@@ -1,0 +1,46 @@
+  {% if user.is_authenticated %}
+<nav class="navbar navbar-expand-lg navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand logo" href="/">Neighbourhood</a>
+  <div class="collapse navbar-collapse justify-content-center" id="navbarTogglerDemo03">
+    <form style="color:black; margin-left: 30%;font-size: 30px;"class="me-auto search-form " target="_self" action="{% url 'search_business' %}">
+      <div class="input-group text-dark">
+
+          <input style="font-size:15px "type="text" class="form-control" placeholder="Search Business"
+              name="search_term">
+      </div>
+  </form>
+  </div>
+  <ul class="nav justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link links" href="/admin" >admin</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link links" href="{%url 'hood' %}" >Hood</a>
+    </li>
+    
+
+    {% for prof in profiles %}
+
+    <li class="nav-item">
+      <a class="" href="{% url 'profile'%}"><img src="{{ prof.profile_picture.url }}" alt="" class="profile-img"> </a>
+    </li>
+
+    {% endfor %}
+
+    <li class="nav-item">
+      <a class="nav-link links" href="{% url 'logout'%}">Logout</a>
+    </li>
+    {% else %}
+      <li>
+        <a class='btn btn-default' href="/accounts/login">Login</a>
+      </li>
+    {% endif %}
+  </ul>
+</nav>
+
+
+
