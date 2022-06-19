@@ -34,6 +34,7 @@ CLOUDINARY_STORAGE = {
     'CD_SECURE':'True',
 
 }
+
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
