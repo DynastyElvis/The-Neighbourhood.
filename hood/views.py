@@ -93,3 +93,63 @@ def join_hood(request, name):
     request.user.profile.neighbourhood = neighbourhood
     request.user.profile.save()
     return redirect('hood')
+def leave_hood(request, id):
+    hood = get_object_or_404(NeighbourHood, id=id)
+    request.user.profile.neighbourhood = None
+    request.user.profile.save()
+    return redirect('hood')
+
+@login_required(login_url="/accounts/login/")
+def create_post(request):
+    current_user = request.user
+    if request.method == 'POST':
+        post_form = PostForm(request.POST, request.FILES)
+        if post_form.is_valid():
+            post = post_form.save(commit=False)
+            post.user = current_user
+            post.save()
+        return HttpResponseRedirect('hood')
+    else:
+        post_form = PostForm()
+    context = {'post_form':post_form}
+    return render(request, 'create_post.html',context)
+
+
+def hood_members(request, hood_id):
+    hood = NeighbourHood.objects.get(id=hood_id)
+    members = Profile.objects.filter(neighbourhood=hood)
+    return render(request, 'members.html', {'members': members})
+    
+
+@login_required(login_url="/accounts/login/")
+def create_business(request):
+    current_user = request.user
+    if request.method == "POST":
+        form=BusinessForm(request.POST,request.FILES)
+        if form.is_valid():
+            business=form.save(commit=False)
+            business.user=current_user
+            business.hood = hoods
+            business.save()
+        return HttpResponseRedirect('/businesses')
+    else:
+        form=BusinessForm()
+    return render (request,'create_business.html', {'form': form, 'profile': profile})
+@login_required(login_url="/accounts/login/")
+def businesses(request):
+    current_user = request.user
+    profile = Profile.objects.filter(user_id=current_user.id).first()
+    businesses = Business.objects.all().order_by('-id')
+    if profile is None:
+        profile = Profile.objects.filter(
+            user_id=current_user.id).first()
+        businesses = Business.objects.all().order_by('-id')
+        locations = Location.objects.all()
+        neighborhood = NeighbourHood.objects.all()
+        return render(request, "profile.html", {"danger": "Update Profile", "locations": locations, "neighborhood": neighborhood, "businesses": businesses})
+    else:
+        neighborhood = profile.neighbourhood
+        businesses = Business.objects.all().order_by('-id')
+        return render(request, "business.html", {"businesses": businesses})
+
+
