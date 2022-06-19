@@ -16,7 +16,7 @@ GITHUB - [ELVIS](https://github.com/DynastyElvis)
  Click [View Site](https://elvis-awwards.herokuapp.com/)  to visit the site
 
 
-[Go Back to the top](#The-Neighbourhood.)
+[Go Back to the top](#The-Neighbourhood)
 
 ## Screenshots 
 ###### User HOMEPAGE
@@ -31,7 +31,7 @@ GITHUB - [ELVIS](https://github.com/DynastyElvis)
  ###### Available Hoods and add new business
  <img src="https://raw.githubusercontent.com/DynastyElvis/The-Neighbourhood./master/static/images/Screenshot%20from%202022-06-20%2000-27-40.png">
 
-[Go Back to the top](#The-Neighbourhood.)
+[Go Back to the top](#The-Neighbourhood)
 
 ## User Story
 * View different projects from the Application
@@ -40,7 +40,7 @@ GITHUB - [ELVIS](https://github.com/DynastyElvis)
 * Rate a project according to usability, content and design.
 * Update profile.
 
-[Go Back to the top](#The-Neighbourhood.)
+[Go Back to the top](#The-Neighbourhood)
 
 
 ## Setup and Installation
@@ -84,7 +84,7 @@ Open the application on your browser `127.0.0.1:8000`.
 * [Bootstrap](https://getbootstrap.com/): front-end framework.
 * [Javascript](https://www.javascript.com/) -programming language
 
-[Go Back to the top](#The-Neighbourhood.)
+[Go Back to the top](#The-Neighbourhood)
 
 ## License
 
@@ -95,15 +95,14 @@ Copyright (c) 2022 K. E. Rono
 
 
 
-[Go Back to the top](#The-Neighbourhood.)
+[Go Back to the top](#The-Neighbourhood)
 
 ## Known Bugs
 
 No Known Bugs.
 
 
-[Go Back to the top](#The-Neighbourhood.)
-
+[Go Back to the top](#The-Neighbourhood)
 
 ## Support and contact details
  Incase you come across errors, have questions, ideas ,concerns, or want to contribute to the application, feel free to reach me at 
