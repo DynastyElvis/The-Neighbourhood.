@@ -56,7 +56,7 @@ SECRET_KEY = 'django-insecure-tx%(ly0vr#=#choij+or$4mndo8ilf^@0e5okvh3@+iu5k(8z8
 DEBUG = True
 
 # ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*',]
 
 
 # Application definition
@@ -167,6 +167,15 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+MEDIA_URL = '/images/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
+
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
