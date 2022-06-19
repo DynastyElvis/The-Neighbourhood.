@@ -55,4 +55,41 @@ def update_profile(request,id):
     ctx = {"form":form}
     return render(request, 'update_profile.html', ctx)
 
+@login_required(login_url="/accounts/login/")
+def create_hood(request):
+    current_user = request.user
+    if request.method == 'POST':
+        hood_form = CreateHoodForm(request.POST, request.FILES)
+        if hood_form.is_valid():
+            hood = hood_form.save(commit=False)
+            hood.user = current_user
+            hood.save()
+        return HttpResponseRedirect('/profile')
+    else:
+        hood_form = CreateHoodForm()
+    context = {'hood_form':hood_form}
+    return render(request, 'hood/create_hood.html',context)
 
+@login_required(login_url="/accounts/login/")
+def hoods(request):
+    current_user = request.user
+    hood = NeighbourHood.objects.all().order_by('-id')
+    profiles = Profile.objects.filter(user_id = current_user.id).all()
+    context ={'hood':hood, 'profiles':profiles,}
+    return render(request, 'hood/hood.html', context)
+
+
+@login_required(login_url="/accounts/login/")
+def single_hood(request,name):
+    hood = NeighbourHood.objects.get(name=name)
+    post = Post.objects.filter(hood=hood)
+    businesses= Business.objects.filter(neighborhood=hood)
+
+    ctx = {"hood":hood, "post":post, 'businesses':businesses}
+    return render(request, 'hood/single_hood.html', ctx)
+
+def join_hood(request, name):
+    neighbourhood = get_object_or_404(NeighbourHood, name=name)
+    request.user.profile.neighbourhood = neighbourhood
+    request.user.profile.save()
+    return redirect('hood')
